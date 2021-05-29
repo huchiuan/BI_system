@@ -27,6 +27,7 @@ const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const MongoDBStore = require('connect-mongo').default;;
 const flash= require('connect-flash');
 
 const app = express()
@@ -45,6 +46,25 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(__dirname + '/views/css'));
 
 
+
+const sessionConfig={
+   
+    name:'session',
+    secret: 'thisissecret',///secret(必要選項)：用來簽章 sessionID 的cookie, 可以是一secret字串或是多個secret組成的一個陣列。
+    //如果是陣列, 只有第一個元素會被 簽到 sessionID cookie裡。而在驗證請求中的簽名時，才會考慮所有元素。
+    resave:false, //resave：強制將session存回 session store, 即使它沒有被修改。預設是 true
+    saveUninitialized:true, //saveUninitialized：強制將未初始化的session存回 session store，未初始化的意思是它是新的而且未被修改。
+    cookie: {
+       httpOnly:true,
+       //secure:true,
+       expires:Date.now() +1000*60*60*24*7,  
+       //expires (日期) cookie的到期日，超過此日期，即失效。
+       //httpOnly (布林) 標記此cookie只能從web server　訪問，以避免不正確的進入來取得竄改。
+       //maxAge (數字) 設定此cookie的生存時間(毫秒為單位)，比方60000(10分鐘後到期，必須重新訪問)
+       maxAge:1000*60*60*24*7
+    }
+ }
+ app.use(session(sessionConfig));
 app.use(flash());
 
 app.use(passport.initialize());
@@ -54,6 +74,12 @@ passport.serializeUser(User.serializeUser());//幫我們對USER 序列化 序列
 passport.deserializeUser(User.deserializeUser());
 
 
+app.use((req,res,next)=>{
+    res.locals.currentUser=req.user;
+    res.locals.success=req.flash('success');
+    res.locals.error =req.flash('error');  //丟到partials的flash處理
+    next();
+ })
 
 
 
@@ -102,7 +128,7 @@ app.post('/register', async(req,res)=>{
        
     } catch(e){
         req.flash('error',e.message);
-        res.redirect('/index');
+        res.redirect('/register');
     }
 })
 
