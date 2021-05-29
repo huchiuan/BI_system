@@ -1,0 +1,123 @@
+[
+ 
+	{
+	"grade":"109",
+	"member":[
+
+		{
+			"photo": "./pic/hu-chuan.jpg",
+			"name": "研究生:胡祐銓",
+			"title": "資管所碩一",
+			"contact": "",
+			"research": "網站系統",
+			"researchenglish":"", 
+			"researchlink": ""
+		},
+		{
+			"photo": "./pic/wang-ting.jpg",
+			"name": "研究生:王婷",
+			"title": "資管所碩一",
+			"contact": "",
+			"research": "人機互動",
+			"researchenglish":"", 
+			"researchlink": ""
+		},
+		{
+			"photo": "./pic/timmy.jpg",
+			"name": "研究生:林書霆",
+			"title": "資管所碩一",
+			"contact": "",
+			"research": "腦波系統",
+			"researchenglish":"", 
+			"researchlink": ""
+		},
+		{
+			"photo": "./pic/chipong.jpg",
+			"name": "研究生:黃熙棚",
+			"title": "資管所碩一",
+			"contact": "",
+			"research": "社群網路",
+			"researchenglish":"", 
+			"researchlink": ""
+		}
+			]
+	
+	},
+	{
+		"grade":"108",
+		"member":[
+	
+			{
+				"photo": "./pic/su.jpg",
+				"name": "研究生:蘇晉威",
+				"title": "資管所碩二",
+				"contact": "",
+				"research": "假新聞",
+				"researchenglish":"", 
+				"researchlink": ""
+			},
+			{
+				"photo": "./pic/tinway.jpg",
+				"name": "研究生:郭庭瑋",
+				"title": "資管所碩二",
+				"contact": "",
+				"research": "假新聞之書目計量學",
+				"researchenglish":"", 
+				"researchlink": ""
+			},
+			{
+				"photo": "./pic/chaisin.jpg",
+				"name": "研究生:張家欣",
+				"title": "資管所碩二",
+				"contact": "",
+				"research": "腦波系統",
+				"researchenglish":"", 
+				"researchlink": ""
+			},
+			{
+				"photo": "./pic/howdun.jpg",
+				"name": "研究生:陳皓惇",
+				"title": "資管所碩二",
+				"contact": "",
+				"research": "擬人化AI",
+				"researchenglish":"", 
+				"researchlink": ""
+			}
+				]
+		
+	},
+	{
+		"grade":"107",
+		"member":[
+	
+			{
+				"photo": "",
+				"name": "研究生:張佳賢",
+				"title": "109年畢業",
+				"contact": "",
+				"research": "張佳賢. \"隱私悖論關聯決策機制之神經科學研究.\" 政治大學資訊管理學系學位論文 (2020): 1-87.",
+				"researchenglish":"Decision Mechanism Associated with Privacy Paradox: A Neuroscience Study", 
+				"researchlink": "https://ithelp.ithome.com.tw/articles/10191901"
+			},
+			{
+				"photo": "",
+				"name": "研究生:張成家",
+				"title": "109年畢業",
+				"contact": "",
+				"research": "張成家. (2020). 網路拍賣價格哄抬偵測之研究. 政治大學資訊管理學系學位論文, 1-55.",
+				"researchenglish":"Detection of Shill Bidding in Online Auctions", 
+				"researchlink": "https://www.airitilibrary.com/Publication/alDetailedMesh1?DocID=U0004-G0107356028"
+			},
+			{
+				"photo": "",
+				"name": "研究生:徐愛茹",
+				"title": "109年畢業",
+				"contact": "",
+				"research": "徐愛茹. (2020). 從隱私計算理論探討個人化服務對隱私資訊揭露之影響. 政治大學資訊管理學系學位論文, 1-95.",
+				"researchenglish":"How Personalized Services Affect Disclosure of Personal Information: A privacy calculus perspective", 
+				"researchlink": "https://www.airitilibrary.com/Publication/alDetailedMesh1?DocID=U0004-G0107356029"
+			}
+				]
+		
+	}
+]

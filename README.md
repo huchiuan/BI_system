@@ -1,1 +1,1 @@
-# BI_system
+# BI-system

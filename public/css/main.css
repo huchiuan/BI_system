@@ -1,0 +1,115 @@
+
+.container-fluid{
+padding-right: 0px;
+padding-left: 0px;
+}
+.nav-link{
+ font-size: 1.3rem !important;
+}
+.container{
+  font-weight: bold;
+}
+.carousel .carousel-item {
+height: 500px;
+}
+
+.carousel-item img {
+  position: absolute;
+  object-fit:cover;
+  top: 0;
+  left: 0;
+  min-height: 500px;
+}
+
+/* .navbar-brand {
+width: 200px;
+left: 15px;
+} */
+
+.research{
+  font-style: oblique;
+}
+
+.nav-back{
+  background-color: black;
+}
+
+.navbar-inner {
+  min-height: 0px;
+}
+.navbar{
+  background-color:#212529!important;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+    color:#808080!important;
+}
+.navbar-nav > .active > a { 
+  background-color: #808080 ; 
+}
+.tpPicture  {
+  width: 32vh;
+  height: 35vh;
+  border-radius: 50%;
+  margin: auto;
+}
+.chPicture {
+  width: 30vh;
+  height: 35vh;
+  border-radius: 50%;
+  margin: auto;
+}
+.memberPicture {
+  width: 25vh;
+  height: 22vh;
+  margin: auto;
+}
+a {
+  color: rgba(25, 58, 150, 0.726);
+  text-decoration: none;
+}
+.maincard{
+  max-width: 540px;
+}
+.picintroduce{
+  text-align:center;
+}
+
+.bodycontainer{
+  padding-bottom: 35px;
+}
+   /* small devices */
+
+
+
+  @media screen and (min-width: 300 px) {
+    .navbar-inner {
+      min-height: 0px;
+    }
+    .navbar-brand,
+    .navbar-nav li a {
+        line-height: 100px;
+        height: 100px;
+        padding-top: 0;
+    }
+    .navbar-brand {
+      width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .navbar-brand {
+      width: 400px;
+    }
+    .memberrow{
+      padding-left:6rem!important;
+    }
+    .memberintro{
+      flex:0 0 auto!important;
+      width:91.6666666667%!important;
+    }
+  }
