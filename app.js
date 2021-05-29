@@ -132,6 +132,27 @@ app.post('/register', async(req,res)=>{
     }
 })
 
+
+
+
+
+app.get('/login',  (req,res)=>{
+    res.render('users/login');
+})
+
+app.post('/login', passport.authenticate('local',{failureFlash:true,failureRedirect:'/login'}), (req,res)=>{
+    req.flash('success','歡迎回來');
+    const redirectUrl = req.session.returnTo ||'index';
+    res.redirect(redirectUrl);
+})
+
+app.get('/logout',  (req,res)=>{
+    req.logout();
+    req.flash('success','登出成功!');
+    res.redirect('/index');
+})
+
+
 const port = process.env.PORT || 3000 ;
 app.listen(port,() => {
     console.log(`Listening on port${port}`);
