@@ -47,10 +47,10 @@ app.use(express.static(__dirname + '/views/css'));
 
 
 
-const sessionConfig={
+const sessionConfig={ //要先設定sessoion 才能用flask顯示
    
     name:'session',
-    secret: 'thisissecret',///secret(必要選項)：用來簽章 sessionID 的cookie, 可以是一secret字串或是多個secret組成的一個陣列。
+    secret: 'secret',///secret(必要選項)：用來簽章 sessionID 的cookie, 可以是一secret字串或是多個secret組成的一個陣列。
     //如果是陣列, 只有第一個元素會被 簽到 sessionID cookie裡。而在驗證請求中的簽名時，才會考慮所有元素。
     resave:false, //resave：強制將session存回 session store, 即使它沒有被修改。預設是 true
     saveUninitialized:true, //saveUninitialized：強制將未初始化的session存回 session store，未初始化的意思是它是新的而且未被修改。
@@ -64,7 +64,8 @@ const sessionConfig={
        maxAge:1000*60*60*24*7
     }
  }
- app.use(session(sessionConfig));
+
+app.use(session(sessionConfig));
 app.use(flash());
 
 app.use(passport.initialize());
@@ -76,6 +77,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
     res.locals.currentUser=req.user;
+ 
     res.locals.success=req.flash('success');
     res.locals.error =req.flash('error');  //丟到partials的flash處理
     next();
@@ -98,11 +100,52 @@ app.get('/pic/:picid',(req,res)=>{
 app.get('/index',(req,res)=>{
     res.render('main/index')
 })
-app.get('/ch-peng',(req,res)=>{
-    res.render('main/ch-peng')
+
+app.get('/2',async(req,res)=>{
+
+      
+    if(res.locals.currentUser== undefined){
+        req.flash('error', '帳號權限不夠，無法進入');
+        return res.redirect('/index')
+    }
+    // const {id} = req.params;
+    const {rank} = res.locals.currentUser
+     console.log(res.locals.currentUser)
+     console.log(rank)
+    //  const guest = await User.findById(id);
+  
+  
+     if (rank<2) {
+        req.flash('error', '帳號權限不夠，無法進入');
+        return res.redirect('/index')
+     }
+  
+  
+     res.render('main/2' );
 })
-app.get('/tp-liang',(req,res)=>{
-    res.render('main/tp-liang')
+
+app.get('/1',async(req,res)=>{
+
+      
+    if(res.locals.currentUser== undefined){
+        req.flash('error', '帳號權限不夠，無法進入');
+        console.log('test')
+        return res.redirect('/index')
+    }
+    // const {id} = req.params;
+    const {rank} = res.locals.currentUser
+     console.log(res.locals.currentUser)
+     console.log(rank)
+    //  const guest = await User.findById(id);
+  
+  
+     if (rank<1) {
+        req.flash('error', '帳號權限不夠，無法進入');
+        return res.redirect('/index')
+     }
+  
+  
+     res.render('main/1' );
 })
 
 app.get('/register',  (req,res)=>{
