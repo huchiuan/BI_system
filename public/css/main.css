@@ -30,48 +30,28 @@ left: 15px;
   font-style: oblique;
 }
 
-.nav-back{
+/* .nav-back{
   background-color: black;
-}
+} */
 
 .navbar-inner {
   min-height: 0px;
 }
-.navbar{
+/* .navbar{
   background-color:#212529!important;
-}
+} */
 
 .navbar-brand,
 .navbar-nav li a {
     line-height: 100px;
     height: 100px;
     padding-top: 0;
-    color:#808080!important;
+   
 }
-.navbar-nav > .active > a { 
-  background-color: #808080 ; 
+.navbar-nav .nav-link {
+  color:white!important; 
 }
-.tpPicture  {
-  width: 32vh;
-  height: 35vh;
-  border-radius: 50%;
-  margin: auto;
-}
-.chPicture {
-  width: 30vh;
-  height: 35vh;
-  border-radius: 50%;
-  margin: auto;
-}
-.memberPicture {
-  width: 25vh;
-  height: 22vh;
-  margin: auto;
-}
-a {
-  color: rgba(25, 58, 150, 0.726);
-  text-decoration: none;
-}
+
 .maincard{
   max-width: 540px;
 }
@@ -84,7 +64,15 @@ a {
 }
    /* small devices */
 
-
+.logincontainer{
+  background-image:url('/pic/toby-osborn-ilHo9qgDEGY-unsplash.jpg');
+  background-repeat: no-repeat;
+ 
+  background-size: cover;
+}
+.logincard{
+  opacity:0.8;
+}
 
   @media screen and (min-width: 300 px) {
     .navbar-inner {

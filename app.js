@@ -87,7 +87,7 @@ app.use((req,res,next)=>{
 
 
 app.get('/',(req,res)=>{
-    res.render('main/index')
+     res.render('users/login' );
 })
 
 
@@ -98,7 +98,21 @@ app.get('/pic/:picid',(req,res)=>{
 })
 
 app.get('/index',(req,res)=>{
-    res.render('main/index')
+    if(res.locals.currentUser== undefined){
+        req.flash('error', '請先登入系統!');
+        return res.redirect('/login')
+    }
+    // const {id} = req.params;
+    const {rank} = res.locals.currentUser
+     console.log(res.locals.currentUser)
+     console.log(rank)
+    //  const guest = await User.findById(id);
+  
+  
+    
+  
+  
+     res.render('main/index' );
 })
 
 app.get('/2',async(req,res)=>{
@@ -192,7 +206,7 @@ app.post('/login', passport.authenticate('local',{failureFlash:true,failureRedir
 app.get('/logout',  (req,res)=>{
     req.logout();
     req.flash('success','登出成功!');
-    res.redirect('/index');
+    res.redirect('/login');
 })
 
 

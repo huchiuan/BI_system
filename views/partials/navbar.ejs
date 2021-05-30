@@ -1,27 +1,39 @@
 
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#">BI系統</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<div class="row sticky-top">
+  <nav class="navbar navbar-light sticky-top navbar-expand-sm" style="background-color: #26587c;">
+  
+      <div class="container">
+      
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-     
+        </button>
+  
+        <div class=" navbar-collapse collapse" id="navbarNavAltMarkup">
+
+          <div class="navbar-nav">
+            <img src="https://image.flaticon.com/icons/png/512/4185/4185655.png" style="height:50px;width:50px"alt="">
+            <a class="nav-link"  href="/index">台灣積體電路製造股份有限公司-財會商業智慧分析系統</a>
+          </div>
           <div class="navbar-nav ms-auto">
             <div class="navbar-nav">
               <a class="nav-link"  href="/index">首頁</a>
-              <a class="nav-link" href="/1">財務人員系統</a>
-              <a class="nav-link" href="/2">會計人員系統</a>
+              <a class="nav-link" href="/1">職等1系統</a>
+              <a class="nav-link" href="/2">職等2系統</a>
               <% if(!currentUser) {%>
-                <a class="nav-link" href="/login">登入</a>
-                <a class="nav-link" href="/register">註冊</a>
+          
+                <button type="button" class="btn btn-light" onclick="javascript:location.href='/login'" style="float:left;margin-left:10px;">登入</button>
+                <button type="button" class="btn btn-light"  onclick="javascript:location.href='/register'" style="float:left;margin-left:10px;">註冊</button>
+              
                 <% } else {%>
-                <a class="nav-link" href="/logout">登出</a>
+               
+                  <button type="button" class="btn btn-light"    onclick="javascript:location.href='/logout'" style="float:left;margin-left:10px;">登出</button>
                 <% } %>
               </div>
           </div>
+        </div>
       </div>
+    </nav>
   </div>
-</nav>
+  
