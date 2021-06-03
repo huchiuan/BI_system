@@ -115,7 +115,30 @@ app.get('/index',(req,res)=>{
      res.render('main/index' );
 })
 
-app.get('/2',async(req,res)=>{
+app.get('/PremierFinancialAccountingInformationAnalysis',async(req,res)=>{
+
+      
+    if(res.locals.currentUser== undefined){
+        req.flash('error', '帳號權限不夠，無法進入');
+        return res.redirect('/index')
+    }
+    // const {id} = req.params;
+    const {rank} = res.locals.currentUser
+     console.log(res.locals.currentUser)
+     console.log(rank)
+    //  const guest = await User.findById(id);
+  
+  
+     if (rank<3) {
+        req.flash('error', '帳號權限不夠，無法進入');
+        return res.redirect('/PremierFinancialAccountingInformationAnalysis')
+     }
+  
+  
+     res.render('main/AdvancedFinancialAccountingInformationAnalysis' );
+})
+
+app.get('/AdvancedFinancialAccountingInformationAnalysis',async(req,res)=>{
 
       
     if(res.locals.currentUser== undefined){
@@ -135,10 +158,10 @@ app.get('/2',async(req,res)=>{
      }
   
   
-     res.render('main/2' );
+     res.render('main/AdvancedFinancialAccountingInformationAnalysis' );
 })
 
-app.get('/1',async(req,res)=>{
+app.get('/GeneralFinancialAccountingInformationAnalysis',async(req,res)=>{
 
       
     if(res.locals.currentUser== undefined){
@@ -159,7 +182,7 @@ app.get('/1',async(req,res)=>{
      }
   
   
-     res.render('main/1' );
+     res.render('main/GeneralFinancialAccountingInformationAnalysis' );
 })
 
 app.get('/register',  (req,res)=>{

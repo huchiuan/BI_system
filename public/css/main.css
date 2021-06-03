@@ -73,7 +73,16 @@ left: 15px;
 .logincard{
   opacity:0.8;
 }
+.registercontainer{
+  background-image:url('/pic/cowomen-3ALW9V3jNkc-unsplash.jpg');
+  background-repeat: no-repeat;
+ 
+  background-size: cover;
+}
 
+.registercard{
+  opacity:0.95;
+}
   @media screen and (min-width: 300 px) {
     .navbar-inner {
       min-height: 0px;
