@@ -131,11 +131,11 @@ app.get('/PremierFinancialAccountingInformationAnalysis',async(req,res)=>{
   
      if (rank<3) {
         req.flash('error', '帳號權限不夠，無法進入');
-        return res.redirect('/PremierFinancialAccountingInformationAnalysis')
+        return res.redirect('/index')
      }
   
   
-     res.render('main/AdvancedFinancialAccountingInformationAnalysis' );
+     res.render('main/PremierFinancialAccountingInformationAnalysis' );
 })
 
 app.get('/AdvancedFinancialAccountingInformationAnalysis',async(req,res)=>{
